@@ -1,8 +1,13 @@
 import React from "react";
-import { SafeAreaView } from "react-native";
+import { SafeAreaView,Text } from "react-native";
+import {getFontFamily} from "./assets/fonts/helper";
+import Title from "./Components/Title/Title";
 
-const App = () => {
-  return <SafeAreaView />
+
+function App() {
+  return <SafeAreaView>
+    <Title title={'Lets Explore'} />
+  </SafeAreaView>;
 }
 
 export default App;
