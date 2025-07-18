@@ -30,6 +30,10 @@ const globalStyle = StyleSheet.create({
     color:'#FFFFFF',
     fontSize: 7,
     fontFamily: getFontFamily('inter_24pt-SemiBold','700')
+  },
+  userStoryContainer:{
+    marginTop:20,
+    marginHorizontal: 28,
   }
 });
 
