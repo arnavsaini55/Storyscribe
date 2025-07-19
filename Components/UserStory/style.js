@@ -12,16 +12,7 @@ const style = StyleSheet.create({
         marginTop: 8,
         textAlign: 'center',
     },
-    userImageContainer:{
-        borderColor: '#ff0000ff',
-        borderWidth: 2,
-        padding: 3,
-        borderRadius: 50,
-    },
-    image:{
-        width: 65,
-        height: 65,
-    },
+    
 })
 
 export default style

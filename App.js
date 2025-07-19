@@ -10,12 +10,14 @@ import UserStory from "./Components/UserStory/UserStory";
 
 
 
+
+
 function App() {
   const userStories =[
     {
       firstname: 'arnav',
       id: 1,
-      profileImage: require('./assets/images/default_profile.png')
+      profileImage: require('./assets/images/pp.jpg')
     },
       {
       firstname: 'Shivi',

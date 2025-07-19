@@ -1,22 +1,22 @@
 import React from "react";
 import { Text, View } from "react-native";
 import PropTypes from "prop-types";
-import { Image } from "react-native";
+
 import style from "./style";
+import UserProfileImage from "../UserProfileImage/UserProfileImage";
 
 const UserStory = props => {
     return <View style={style.storyContainer}>
-        <View style={style.userImageContainer}>
-            <Image source = {props.profileImage} style={style.image}/>
-        </View>
+        <UserProfileImage
+         profileImage={props.profileImage}
+         imageDimensions={65} />
         <Text style={style.firstName}>{props.firstName}
         </Text>
     </View>
 }
 
-UserStory.protoTypes = {
+UserStory.PropTypes = {
 firstName: PropTypes.string.isRequired,
-profileImage: PropTypes.object.isRequired,
-};
+}
 
 export default UserStory;
