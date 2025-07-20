@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import globalStyle from "./assets/styles/globalStyle"
 import { faEnvelope,  } from "@fortawesome/free-solid-svg-icons";
 import UserStory from "./Components/UserStory/UserStory";
+import UserPost from "./Components/UserPost/UserPost";
 
 
 
@@ -65,80 +66,65 @@ function App() {
       profileImage: require('./assets/images/default_profile.png')
     },
   ];
-  const userPosts =[
+
+   const userPosts = [
     {
-      firstName: 'arnav',
-      lastname: 'Saini',
-      Location: 'Bali',
-      Likes:'12002',
-      comment:'244',
-      share:'12',
-      id:'1'
+      firstName: 'Allison',
+      lastName: 'Becker',
+      location: 'Boston, MA',
+      likes: 1201,
+      comments: 24,
+      bookmarks: 55,
+      image: require('./assets/images/default_post.png'),
+      profileImage: require('./assets/images/default_profile.png'),
+      id: 1,
     },
     {
-      firstName: 'Shivi',
-      lastname: 'Gupta',
-      Location: 'Gurugram',
-      Likes:'132',
-      comment:'24',
-      share:'-',
-      id:'2'
+      firstName: 'Jennifer',
+      lastName: 'Wilkson',
+      location: 'Worcester, MA',
+      likes: 1301,
+      comments: 25,
+      bookmarks: 70,
+      image: require('./assets/images/default_post.png'),
+       profileImage: require('./assets/images/default_profile.png'),
+      id: 2,
     },
     {
-      firstName: 'Shivansh',
-      lastname: 'Dixit',
-      Location: 'Noida',
-      Likes:'120023',
-      comment:'2433',
-      share:'10',
-      id:'3'
+      firstName: 'Adam',
+      lastName: 'Spera',
+      location: 'Worcester, MA',
+      likes: 100,
+      comments: 8,
+      bookmarks: 3,
+      image: require('./assets/images/default_post.png'),
+       profileImage: require('./assets/images/default_profile.png'),
+      id: 3,
     },
     {
-      firstName: 'Akshat',
-      lastname: '',
-      Location: 'DelhiNCr',
-      Likes:'12',
-      comment:'4',
-      share:'1',
-      id:'4'
+      firstName: 'Nata',
+      lastName: 'Vacheishvili',
+      location: 'New York, NY',
+      likes: 200,
+      comments: 16,
+      bookmarks: 6,
+      image: require('./assets/images/default_post.png'),
+       profileImage: require('./assets/images/default_profile.png'),
+      id: 4,
     },
     {
-      firstName: 'Bhatnagar',
-      lastname: 'Priyasnhu',
-      Location: 'Lucknow',
-      Likes:'120',
-      comment:'4',
-      share:'3',
-      id:'5'
-    },
-    {
-      firstName: 'arnav',
-      lastname: 'Saini',
-      Location: 'Bali',
-      Likes:'12002',
-      comment:'244',
-      share:'12',
-      id:'6'
-    },
-    {
-      firstName: 'arnav',
-      lastname: 'Saini',
-      Location: 'Bali',
-      Likes:'12002',
-      comment:'244',
-      share:'12',
-      id:'7'
-    },
-    {
-      firstName: 'arnav',
-      lastname: 'Saini',
-      Location: 'Bali',
-      Likes:'12002',
-      comment:'244',
-      share:'12',
-      id:'8'
+      firstName: 'Nicolas',
+      lastName: 'Namoradze',
+      location: 'Berlin, Germany',
+      likes: 2000,
+      comments: 32,
+      bookmarks: 12,
+      image: require('./assets/images/default_post.png'),
+       profileImage: require('./assets/images/default_profile.png'),
+      id: 5,
     },
   ];
+  
 const userStoriesPageSize = 4;
   const [userStoriesCurrentPage, setUserStoriesCurrentPage] = useState(1);
   const [userStoriesRenderedData, setUserStoriesRenderedData] = useState([]);
@@ -199,6 +185,19 @@ const userStoriesPageSize = 4;
          firstName={item.firstname} 
       profileImage={item.profileImage}/>
     )}/>
+    </View> 
+    <View>
+      <FlatList data={userPosts} renderItem={({item}) => (
+       <UserPost firstName={item.firstName}
+       lastName={item.lastName}
+        image={item.image}
+        likes={item.likes}
+        comments={item.comments}
+        bookmarks={item.bookmarks}
+        profileImage={item.profileImage}
+        />
+   )}
+   />
     </View>
   </SafeAreaView>
 )}
