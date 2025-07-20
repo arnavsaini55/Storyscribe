@@ -1,14 +1,27 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { View } from "react-native";
+import { Text, View } from "react-native";
 import UserProfileImage from "../UserProfileImage/UserProfileImage";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 
 const UserPost = props => {
     return <View>
-        <View>
-            <UserProfileImage profileImage={props.profileImage} imageDimensions={49} />
+        <View style={{flexDirection:'row',alignItems:'center'}}>
+            <UserProfileImage profileImage={props.profileImage} imageDimensions={48} />
+        
+        <View style={{justifyContent:'center', marginLeft:10}}>
+            <Text>
+                {props.firstName} {props.lastName}
+            </Text>
+            <View style={{justifyContent:'center'}}>
+            {props.location && <Text>{props.location}
+                </Text>}
+                </View>
+              </View>  
+              <FontAwesomeIcon icon={faEllipsis}></FontAwesomeIcon>
         </View>
-    </View>;
+        </View>;
 };
 
 UserPost.propTypes= {

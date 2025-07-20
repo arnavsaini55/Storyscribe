@@ -69,9 +69,9 @@ function App() {
 
    const userPosts = [
     {
-      firstName: 'Allison',
-      lastName: 'Becker',
-      location: 'Boston, MA',
+      firstName: 'Arnav',
+      lastName: 'Saini',
+      location: 'Lucknow, Up',
       likes: 1201,
       comments: 24,
       bookmarks: 55,
@@ -187,7 +187,8 @@ const userStoriesPageSize = 4;
     )}/>
     </View> 
     <View>
-      <FlatList data={userPosts} renderItem={({item}) => (
+      <FlatList data={userPosts} renderItem={({item})  => (
+        <View style={globalStyle.userPostContainer}>
        <UserPost firstName={item.firstName}
        lastName={item.lastName}
         image={item.image}
@@ -195,8 +196,11 @@ const userStoriesPageSize = 4;
         comments={item.comments}
         bookmarks={item.bookmarks}
         profileImage={item.profileImage}
+        location={item.location}
         />
-   )}
+        </View>
+    )}
+    
    />
     </View>
   </SafeAreaView>
