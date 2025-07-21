@@ -120,7 +120,7 @@ function App() {
       comments: 32,
       bookmarks: 12,
       image: require('./assets/images/default_post.png'),
-       profileImage: require('./assets/images/default_profile.png'),
+      profileImage: require('./assets/images/default_profile.png'),
       id: 5,
     },
   ];
@@ -154,7 +154,12 @@ const userStoriesPageSize = 4;
 
   return (
   <SafeAreaView>
-    <View style={globalStyle.header}>
+  
+    <View>
+      <FlatList
+      showsVerticalScrollIndicator={false}
+      ListHeaderComponent={<>
+        <View style={globalStyle.header}>
      <Title title={'Lets Explore'} />
      <TouchableOpacity style={globalStyle.messageBox}>
      <FontAwesomeIcon icon={faEnvelope} size={20} color={'#898DAE'} />
@@ -186,8 +191,8 @@ const userStoriesPageSize = 4;
       profileImage={item.profileImage}/>
     )}/>
     </View> 
-    <View>
-      <FlatList data={userPosts} renderItem={({item})  => (
+      </>}
+      data={userPosts} renderItem={({item})  => (
         <View style={globalStyle.userPostContainer}>
        <UserPost firstName={item.firstName}
        lastName={item.lastName}
@@ -206,4 +211,4 @@ const userStoriesPageSize = 4;
   </SafeAreaView>
 )}
 
-export default App;
+export default App; 
